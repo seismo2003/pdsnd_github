@@ -3,7 +3,9 @@
 ### Version Control Project
 
 ### Description
-The project is to create a remote repository on github and store all of my bike sharing project files to the remote repository.
+The project is to create a remote repository on github and store all of Wenyen's bike sharing project files to the remote repository.
+The python file included in this repository can be used to analyze the
+bike usage data in Chicago, New York City and Washington.
 
 ### Files used
 The files used in this program are as following:
