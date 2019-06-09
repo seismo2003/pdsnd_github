@@ -98,14 +98,14 @@ def station_stats(df):
 
     # TO DO: display most commonly used start station
     common_start_st = df["Start Station"].mode()[0]
-    print("The most common start station is: ", common_start_st)
+    print("The most common start station is:", common_start_st)
     # TO DO: display most commonly used end station
     common_end_st = df["End Station"].mode()[0]
-    print("The most common end station is: ", common_end_st)
+    print("The most common end station is:", common_end_st)
     # TO DO: display most frequent combination of start station and end station trip
     df["common_route"] = df['Start Station'] + ' to ' + df['End Station']
     common_route = df["common_route"].mode()[0]
-    print("The most common route is: ", common_route)
+    print("The most common route is:", common_route)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -118,10 +118,10 @@ def trip_duration_stats(df):
 
     # TO DO: display total travel time
     total_travel_time = df['Trip Duration'].sum()
-    print("The total travel time is: ", total_travel_time)
+    print("The total travel time is:", total_travel_time)
     # TO DO: display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
-    print("The mean travel time is: ", mean_travel_time)
+    print("The mean travel time is:", mean_travel_time)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -145,14 +145,14 @@ def user_stats(df):
     #df['Earliest Birth Year'] = df['Birth Year'].fillna(0)
     #earliest_yob = df['Birth Year'].sort_values(ascending = True).head(1).item()
     earliest_yob = df['Birth Year'].describe()['min']
-    print("The earliest year of birth is: ", earliest_yob)
+    print("The earliest year of birth is:", earliest_yob)
     #current_yr = datetime.datetime.now().year
     recent_yob = df['Birth Year'].describe()['max']
     #df['Most Recent Birth Year'] = df['Birth Year'].fillna(current_yr)
     #recent_yob = df['Birth Year'].sort_values(ascending = False).head(1).item()
-    print("The most recent year of birth is: ", recent_yob)
+    print("The most recent year of birth is:", recent_yob)
     common_yob = df['Birth Year'].mode()[0]
-    print("The most common year of birth is: ", common_yob)
+    print("The most common year of birth is:", common_yob)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
