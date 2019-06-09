@@ -1,15 +1,21 @@
-### Date created
-Include the date you created this project and README file.
+### The file was created on 06/09/2019 Sunday at 5:38 PM
 
-### Project Title
-Replace the Project Title
+### Version Control Project
 
 ### Description
-Describe what your project is about and what it does
+The project is to create a remote repository on github and store all of my bike sharing project files to the remote repository.
 
 ### Files used
-Include the files used
+The files used in this program are as following:
+bikeshare.py
+chicago.csv
+new_york_city.csv
+washington.csv
+
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+I give credits to Udacity, Github and the following blogs/sites which guided me to complete the project:
 
+https://www.bash.academy/
+https://stackoverflow.com/questions/tagged/python
+https://apple.stackexchange.com
