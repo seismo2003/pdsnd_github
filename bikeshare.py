@@ -133,13 +133,13 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # TO DO: Display counts of user types
+    #Use DataFrame to align the series rendered by value_counts
     user_types = df['User Type'].value_counts()
-    print("Display user types:  ", user_types)
-
-    # TO DO: Display counts of gender
+    user_types_df = pd.DataFrame(user_types)
     gender = df['Gender'].value_counts()
-    print("Display gender: ", gender)
+    gender_df = pd.DataFrame(gender)
+    print("Display user types:\n",user_types_df)
+    print("\nDisplay genders:\n",gender_df)
 
     # TO DO: Display earliest, most recent, and most common year of birth
     #df['Earliest Birth Year'] = df['Birth Year'].fillna(0)
