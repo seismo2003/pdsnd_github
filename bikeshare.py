@@ -37,7 +37,7 @@ def get_filters():
     while day not in day_list:
         print("The city you entered is not in our library, please re-enter city name again")
         day = input("Please choose the day of week you want to analyze:").lower()
-
+    print("\nYou choose {} as target city.\nYou choose {}.\nYou choose {}\n".format(city,month,day))
     print('-'*40)
     return city, month, day
 
@@ -118,10 +118,10 @@ def trip_duration_stats(df):
 
     # TO DO: display total travel time
     total_travel_time = df['Trip Duration'].sum()
-    print("The total travel time is: ", total_travel_time)
+    print("The total travel time is:", total_travel_time,"seconds")
     # TO DO: display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
-    print("The mean travel time is: ", mean_travel_time)
+    print("The mean travel time is:", mean_travel_time,"seconds")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -145,14 +145,14 @@ def user_stats(df):
     #df['Earliest Birth Year'] = df['Birth Year'].fillna(0)
     #earliest_yob = df['Birth Year'].sort_values(ascending = True).head(1).item()
     earliest_yob = df['Birth Year'].describe()['min']
-    print("The earliest year of birth is: ", earliest_yob)
+    print("\nThe earliest year of birth is: ", int(earliest_yob))
     #current_yr = datetime.datetime.now().year
     recent_yob = df['Birth Year'].describe()['max']
     #df['Most Recent Birth Year'] = df['Birth Year'].fillna(current_yr)
     #recent_yob = df['Birth Year'].sort_values(ascending = False).head(1).item()
-    print("The most recent year of birth is: ", recent_yob)
+    print("The most recent year of birth is: ", int(recent_yob))
     common_yob = df['Birth Year'].mode()[0]
-    print("The most common year of birth is: ", common_yob)
+    print("The most common year of birth is: ", int(common_yob))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -167,10 +167,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        df = df.drop('common_route', axis = 1)
-        df = df.drop('hour', axis = 1)
-        df = df.drop('day', axis = 1)
-        df = df.drop('month', axis = 1)
+        df = df.drop(['common_route', 'hour', 'day', 'month'], axis = 1)
         raw_data = input('\nWould you like to see raw data? Enter yes or no.\n')
         count = 0
         while raw_data.lower() == 'yes':
